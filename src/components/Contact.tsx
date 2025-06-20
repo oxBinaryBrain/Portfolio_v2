@@ -76,7 +76,6 @@ const Contact = () => {
           className="mb-16 text-center"
         >
           <div className="flex items-center justify-center mb-4">
-            <MessageSquare size={20} className="text-purple mr-2" />
             <span className="section-subtitle">Get In Touch</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-light via-purple to-purple-dark bg-clip-text text-transparent">
