@@ -39,11 +39,11 @@ const Index = () => {
 
   return (
     <div className={`min-h-screen overflow-hidden transition-colors duration-500 ease-in-out ${theme === 'light' ? 'light-theme creative-light-theme' : ''}`}>
-      {/* Global particles background */}
+      {/* Global particles background - reduced for home page */}
       <div className="fixed inset-0 z-0">
         <ParticlesBackground 
-          opacity={0.4} 
-          particleCount={120} 
+          opacity={0.3} 
+          particleCount={80} 
           particleSize={2}
           speed={0.3}
           connectionDistance={100}
@@ -115,12 +115,12 @@ const Index = () => {
           
           <section className="relative">
             <ParticlesBackground 
-              opacity={0.6} 
-              particleCount={95} 
-              particleSize={3.2}
-              speed={0.5}
-              connectionDistance={125}
-              showConnections={true}
+              opacity={0.4} 
+              particleCount={60} 
+              particleSize={2.5}
+              speed={0.3}
+              connectionDistance={100}
+              showConnections={false}
             />
             <div className="relative z-10">
               <Contact />

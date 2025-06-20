@@ -1,10 +1,8 @@
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, CheckCircle, Loader2, AlertCircle } from "lucide-react";
+import { Mail, Send, CheckCircle, Loader2, AlertCircle, MessageSquare, Clock, Github, Linkedin, Twitter } from "lucide-react";
 import { toast } from "sonner";
 import { submitContactForm, ContactFormData } from "@/services/contactService";
-import ParticlesBackground from "./ParticlesBackground";
 
 const Contact = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -66,9 +64,9 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
-      <ParticlesBackground opacity={0.3} particleCount={80} />
-      <div className="section-container relative z-10">
+    <section id="contact" className="py-24 relative overflow-hidden min-h-screen flex items-center">
+      <div className="section-container w-full">
+        {/* Header */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -77,65 +75,126 @@ const Contact = () => {
           custom={1}
           className="mb-16 text-center"
         >
-          <h2 className="section-subtitle">Get In Touch</h2>
-          <h3 className="section-title">Contact Me</h3>
-          <p className="section-description mx-auto">
-            Let's connect and discuss potential collaborations
+          <div className="flex items-center justify-center mb-4">
+            <MessageSquare size={20} className="text-purple mr-2" />
+            <span className="section-subtitle">Get In Touch</span>
+          </div>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-light via-purple to-purple-dark bg-clip-text text-transparent">
+            Let's Connect
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Got a project in mind? Drop me a message and let's create something amazing together!
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-          {/* Contact Info */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+          {/* Left Side - Contact Information */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUpVariant}
             custom={2}
-            className="lg:col-span-2 space-y-8"
+            className="space-y-8"
           >
-            <div className="glass rounded-xl p-6 hover:bg-secondary/20 transition-all duration-300 hover:scale-105 cursor-pointer card-hover-effect">
-              <div className="mb-4 w-12 h-12 rounded-lg bg-purple/20 flex items-center justify-center">
-                <Mail size={20} className="text-purple" />
+            {/* Contact Info Card */}
+            <div className="glass rounded-2xl p-8 space-y-6">
+              <div className="flex items-center mb-6">
+                <MessageSquare size={24} className="text-purple mr-3" />
+                <h3 className="text-xl font-bold">Contact Information</h3>
               </div>
-              <h4 className="text-lg font-semibold mb-1">Email</h4>
-              <a href="mailto:ud4yg@yandex.com" className="text-muted-foreground hover:text-purple transition-colors">
-                ud4yg@yandex.com
-              </a>
+
+              {/* Email */}
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 rounded-xl bg-purple/20 flex items-center justify-center flex-shrink-0">
+                  <Mail size={20} className="text-purple" />
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-1">Email</h4>
+                  <a 
+                    href="mailto:ud4yg@yandex.com" 
+                    className="text-muted-foreground hover:text-purple transition-colors"
+                  >
+                    ud4yg@yandex.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Social Media */}
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 rounded-xl bg-purple/20 flex items-center justify-center flex-shrink-0">
+                  <MessageSquare size={20} className="text-purple" />
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-3">Social Media</h4>
+                  <div className="flex space-x-3">
+                    <a
+                      href="https://github.com/oxBinaryBrain/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-lg glass flex items-center justify-center hover:bg-purple/20 transition-colors"
+                    >
+                      <Github size={18} />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/uday-g-601ba9266/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-lg glass flex items-center justify-center hover:bg-purple/20 transition-colors"
+                    >
+                      <Linkedin size={18} />
+                    </a>
+                    <a
+                      href="https://x.com/UdayG6389896490"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-lg glass flex items-center justify-center hover:bg-purple/20 transition-colors"
+                    >
+                      <Twitter size={18} />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="glass rounded-xl p-6 hover:bg-secondary/20 transition-all duration-300 hover:scale-105 cursor-pointer card-hover-effect">
-              <div className="mb-4 w-12 h-12 rounded-lg bg-purple/20 flex items-center justify-center">
-                <MapPin size={20} className="text-purple" />
+            {/* Response Time Card */}
+            <div className="glass rounded-2xl p-6">
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 rounded-xl bg-purple/20 flex items-center justify-center flex-shrink-0">
+                  <Clock size={20} className="text-purple" />
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-1">Response Time</h4>
+                  <p className="text-sm text-muted-foreground">
+                    I typically reply within 24 hours during business days.
+                  </p>
+                </div>
               </div>
-              <h4 className="text-lg font-semibold mb-1">Location</h4>
-              <p className="text-muted-foreground">
-                Bengaluru, Karnataka, India
-              </p>
             </div>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Right Side - Contact Form */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUpVariant}
             custom={3}
-            className="lg:col-span-3"
+            className="glass rounded-2xl p-8"
           >
-            <form onSubmit={handleSubmit} className="glass rounded-xl p-8 shadow-lg card-hover-effect">
-              {formError && (
-                <div className="mb-6 p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-red-500 flex items-start">
-                  <AlertCircle size={20} className="mr-2 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium">Error submitting form</p>
-                    <p className="text-sm">{formError}</p>
-                  </div>
+            {formError && (
+              <div className="mb-6 p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-red-500 flex items-start">
+                <AlertCircle size={20} className="mr-2 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="font-medium">Error submitting form</p>
+                  <p className="text-sm">{formError}</p>
                 </div>
-              )}
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Name and Email Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
                     Your Name
@@ -147,7 +206,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     disabled={isSubmitting || submitted}
-                    className="w-full rounded-lg bg-secondary/30 border-0 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-purple/50 focus:outline-none transition-colors disabled:opacity-70"
+                    className="w-full rounded-xl bg-secondary/30 border-0 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-purple/50 focus:outline-none transition-colors disabled:opacity-70"
                     placeholder="John Doe"
                     required
                   />
@@ -155,7 +214,7 @@ const Contact = () => {
                 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Your Email
+                    Email
                   </label>
                   <input
                     type="email"
@@ -164,14 +223,15 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     disabled={isSubmitting || submitted}
-                    className="w-full rounded-lg bg-secondary/30 border-0 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-purple/50 focus:outline-none transition-colors disabled:opacity-70"
-                    placeholder="john@example.com"
+                    className="w-full rounded-xl bg-secondary/30 border-0 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-purple/50 focus:outline-none transition-colors disabled:opacity-70"
+                    placeholder="you@example.com"
                     required
                   />
                 </div>
               </div>
               
-              <div className="mb-6">
+              {/* Subject */}
+              <div>
                 <label htmlFor="subject" className="block text-sm font-medium mb-2">
                   Subject
                 </label>
@@ -182,13 +242,14 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   disabled={isSubmitting || submitted}
-                  className="w-full rounded-lg bg-secondary/30 border-0 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-purple/50 focus:outline-none transition-colors disabled:opacity-70"
-                  placeholder="How can I help you?"
+                  className="w-full rounded-xl bg-secondary/30 border-0 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-purple/50 focus:outline-none transition-colors disabled:opacity-70"
+                  placeholder="Project inquiry / Job opportunity / Collaboration..."
                   required
                 />
               </div>
               
-              <div className="mb-6">
+              {/* Message */}
+              <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-2">
                   Message
                 </label>
@@ -198,22 +259,23 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   disabled={isSubmitting || submitted}
-                  rows={5}
-                  className="w-full rounded-lg bg-secondary/30 border-0 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-purple/50 focus:outline-none transition-colors resize-none disabled:opacity-70"
-                  placeholder="Tell me about your project..."
+                  rows={6}
+                  className="w-full rounded-xl bg-secondary/30 border-0 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-purple/50 focus:outline-none transition-colors resize-none disabled:opacity-70"
+                  placeholder="Tell me more about your project, your timeline, and what you're looking to achieve..."
                   required
                 ></textarea>
               </div>
               
+              {/* Submit Button */}
               <button
                 type="submit"
                 disabled={isSubmitting || submitted}
-                className={`w-full rounded-lg px-6 py-3 font-medium transition-all duration-300 flex items-center justify-center space-x-2 ${
+                className={`w-full rounded-xl px-6 py-4 font-medium transition-all duration-300 flex items-center justify-center space-x-2 ${
                   submitted
                     ? "bg-green-600/20 text-green-400"
                     : isSubmitting
                     ? "bg-purple/10 text-purple/50"
-                    : "bg-purple/20 hover:bg-purple/30 text-purple-light hover:scale-105"
+                    : "bg-gradient-to-r from-purple-dark to-purple hover:from-purple to-purple-light text-white hover:scale-105 shadow-lg hover:shadow-purple/25"
                 }`}
               >
                 {isSubmitting ? (
@@ -233,6 +295,11 @@ const Contact = () => {
                   </>
                 )}
               </button>
+
+              {/* Privacy Note */}
+              <p className="text-xs text-muted-foreground text-center">
+                I value your privacy. Your information will never be shared with third parties.
+              </p>
             </form>
           </motion.div>
         </div>

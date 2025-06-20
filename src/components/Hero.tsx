@@ -10,11 +10,11 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       <ParticlesBackground 
-        opacity={0.9} 
-        particleCount={200} 
-        particleSize={4}
-        speed={0.8}
-        connectionDistance={150}
+        opacity={0.6} 
+        particleCount={120} 
+        particleSize={3}
+        speed={0.6}
+        connectionDistance={120}
         showConnections={true}
       />
 
