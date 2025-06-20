@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 270 67% 60%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    
+    --accent: 270 67% 60%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 270 67% 60%;
+    
+    --radius: 0.75rem;
+  }
+
+  .light-theme {
+    --background: 225 25% 95%;
+    --foreground: 240 10% 3.9%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    
+    --primary: 270 67% 55%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 240 4.8% 90%;
+    --secondary-foreground: 240 5.9% 10%;
+    
+    --muted: 240 4.8% 90%;
+    --muted-foreground: 240 3.8% 46.1%;
+    
+    --accent: 270 67% 55%;
+    --accent-foreground: 240 5.9% 10%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 5.9% 85%;
+    --input: 240 5.9% 85%;
+    --ring: 270 67% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border selection:bg-purple-dark/20 selection:text-purple-light;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased overflow-x-hidden;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-lg;
+  }
+  
+  .light-theme .glass {
+    @apply backdrop-blur-xl bg-black/5 border border-black/10 shadow-lg;
+  }
+  
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24;
+  }
+  
+  .section-title {
+    @apply font-sans text-3xl md:text-4xl font-bold mb-6 tracking-tight;
+  }
+  
+  .section-subtitle {
+    @apply inline-block py-1 px-3 rounded-full text-xs font-medium tracking-wide text-purple-light bg-purple-dark/20 mb-4;
+  }
+  
+  .section-description {
+    @apply text-muted-foreground max-w-3xl mb-12 leading-relaxed;
+  }
+
+  .light-theme .section-subtitle {
+    @apply bg-purple/20 text-purple-dark;
+  }
+  
+  .card-gradient-dark {
+    @apply bg-gradient-to-br from-secondary/80 to-secondary;
+  }
+  
+  .card-gradient-light {
+    @apply bg-gradient-to-br from-white to-secondary/20;
+  }
+
+  /* Enhanced particle effects */
+  .particles-enhanced {
+    background: radial-gradient(circle at 20% 50%, rgba(159, 122, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(183, 148, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(107, 70, 193, 0.1) 0%, transparent 50%);
+  }
+
+  .light-theme .particles-enhanced {
+    background: radial-gradient(circle at 20% 50%, rgba(159, 122, 234, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(183, 148, 246, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(107, 70, 193, 0.05) 0%, transparent 50%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
+}
+
+/* Smooth transition between sections */
+.page-transition {
+  @apply transition-all duration-500 ease-out;
+}
+
+/* Animated underline for links */
+.animated-underline {
+  @apply relative after:absolute after:bg-purple after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-in-out;
+}
+
+/* Theme transition */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Light theme specific styles */
+.light-theme .skill-card {
+  @apply from-purple-light/10 to-purple/30;
+}
+
+.light-theme .tech-card {
+  @apply hover:bg-purple/10;
+}
+
+/* Creative Light Theme Styles */
+.creative-light-theme {
+  background: linear-gradient(109.6deg, rgba(236, 241, 253, 1) 11.2%, rgba(252, 252, 255, 1) 91.1%);
+}
+
+.creative-light-theme .glass {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.creative-light-theme .section-title {
+  background: linear-gradient(90deg, hsla(270, 60%, 50%, 1) 0%, hsla(297, 50%, 51%, 1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.creative-light-theme #about {
+  background: linear-gradient(90deg, hsla(46, 73%, 95%, 1) 0%, hsla(176, 73%, 94%, 1) 100%);
+}
+
+.creative-light-theme #academics {
+  background: linear-gradient(90deg, hsla(194, 43%, 94%, 1) 0%, hsla(216, 41%, 94%, 1) 100%);
+}
+
+.creative-light-theme #projects {
+  background: linear-gradient(90deg, hsla(277, 75%, 97%, 1) 0%, hsla(297, 50%, 96%, 1) 100%);
+}
+
+.creative-light-theme #resume {
+  background: linear-gradient(90deg, hsla(224, 43%, 94%, 1) 0%, hsla(244, 41%, 94%, 1) 100%);
+}
+
+.creative-light-theme #contact {
+  background: linear-gradient(90deg, hsla(196, 33%, 94%, 1) 0%, hsla(216, 41%, 94%, 1) 100%);
+}
+
+.creative-light-theme .card-hover-effect {
+  transition: all 0.3s ease;
+}
+
+.creative-light-theme .card-hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced light theme effects */
+.creative-light-theme .glass {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.creative-light-theme .glass:hover {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 10px 40px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* Particle animation enhancements */
+@keyframes particleFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(120deg); }
+  66% { transform: translateY(5px) rotate(240deg); }
+}
+
+@keyframes particleGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.particle-enhanced {
+  animation: particleFloat 6s ease-in-out infinite, particleGlow 3s ease-in-out infinite;
+}
