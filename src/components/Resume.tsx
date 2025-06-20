@@ -18,10 +18,10 @@ const Resume = () => {
 
   // Skills data
   const programmingSkills = [
-    { name: "C++", level: 85 },
     { name: "JavaScript", level: 85 },
+    { name: "Python", level: 85 },
     { name: "TypeScript", level: 80 },
-    { name: "Python", level: 90 },
+    { name: "C++", level: 70},
   ];
 
   const webDevSkills = [

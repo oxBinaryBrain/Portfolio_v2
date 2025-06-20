@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, ExternalLink, ChevronLeft, ChevronRight, Play, Pause, BarChartHorizontal, Brain, CreditCard, Braces, Bitcoin, } from "lucide-react";
+import { Github, ExternalLink, ChevronLeft, ChevronRight, Play, Pause, BarChartHorizontal, Brain, CreditCard, Braces, Bitcoin, Aperture, } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 interface Project {
@@ -68,6 +68,26 @@ const projects: Project[] = [
   },
   {
     id: 6,
+    title: "Smart Home Dashboard",
+    subtitle: "Arduino & IoT",
+    description: "A dashboard for monitoring and controlling smart home devices.",
+    image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=800&q=80",
+    tags: ["C", "Arduino", "IoT"],
+    github: "https://github.com/oxBinaryBrain/Ardiuno",
+    icon: <Braces />,
+  },
+  {
+    id: 7,
+    title: "Leave Management",
+    subtitle: "MERN Stack",
+    description: "A web-based application designed to streamline leave management processes with JWT authentication, role-based access controls, and analytical dashboards. Built using MongoDB, Express.js, React.js, and Node.js.",
+    image: "https://cdn.dribbble.com/userupload/35384175/file/original-acce12f4d4723e8af67122957a1c676c.png?resize=752x&vertical=center",
+    tags: ["TypeScript", "MongoDB", "Node.js", "React.js"],
+    github: "https://github.com/oxBinaryBrain/Leave_Management",
+    icon: <Aperture />,
+  },
+  {
+    id: 8,
     title: "Smart Home Dashboard",
     subtitle: "Arduino & IoT",
     description: "A dashboard for monitoring and controlling smart home devices.",

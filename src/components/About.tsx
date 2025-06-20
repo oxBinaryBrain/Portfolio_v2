@@ -56,12 +56,6 @@ const About = () => {
                 }}
               />
             </div>
-            <div className="absolute -bottom-5 -right-5 w-48 h-48 md:w-64 md:h-64 glass rounded-2xl z-10 p-6 flex flex-col justify-center bg-background/80 border-purple/20 border-2 backdrop-blur-lg">
-              <h4 className="text-xl font-bold mb-3 text-purple">Experience</h4>
-              <p className="text-sm text-foreground">
-                Building applications with modern frameworks and technologies for web and mobile platforms
-              </p>
-            </div>
           </motion.div>
 
           <motion.div
