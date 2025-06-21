@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { Code, Server, Cpu, Brain } from "lucide-react";
@@ -49,10 +48,10 @@ const About = () => {
               <div 
                 className="absolute inset-0" 
                 style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8')",
+                  backgroundImage: "url('/Gemini_Generated_Image_il9h6pil9h6pil9h.jpg')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
-                  opacity: 0.7
+                  opacity: 0.9
                 }}
               />
             </div>
