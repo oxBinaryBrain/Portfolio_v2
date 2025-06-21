@@ -1,7 +1,6 @@
-
 import React from "react";
 import { motion } from "framer-motion";
-import { FileText, Download, Code, Cpu, Database, Globe, Server, GitBranch, Terminal, Layers, Briefcase } from "lucide-react";
+import { FileText, Download, Code, Cpu, Database, Globe, Server, GitBranch, Terminal, Layers, Briefcase, Award, ExternalLink } from "lucide-react";
 
 const Resume = () => {
   const fadeInUpVariant = {
@@ -59,6 +58,50 @@ const Resume = () => {
     { name: "Git", icon: <GitBranch size={32} className="text-purple mb-4" /> },
     { name: "VS Code", icon: <Terminal size={32} className="text-purple mb-4" /> },
     { name: "Vercel", icon: <Server size={32} className="text-purple mb-4" /> },
+  ];
+
+  // Certifications data
+  const certifications = [
+    {
+      title: "API Prototyping Learning Path",
+      issuer: "Postman",
+      date: "December 2024",
+      credentialId: "PST-APL-2024",
+      skills: ["API Prototyping", "API Testing", "API Documentation"],
+      link: "#"
+    },
+    {
+      title: "Career Essentials in Generative AI",
+      issuer: "Microsoft and LinkedIn",
+      date: "November 2024",
+      credentialId: "MSLI-GAI-2024",
+      skills: ["Generative AI", "Prompt Engineering", "LLM Applications"],
+      link: "#"
+    },
+    {
+      title: "Learning Microsoft Power BI",
+      issuer: "Infosys Springboard",
+      date: "November 2024",
+      credentialId: "ISB-PBI-2024",
+      skills: ["Microsoft Power BI", "Data Visualization", "Business Intelligence"],
+      link: "#"
+    },
+    {
+      title: "Neural Networks and Deep Learning",
+      issuer: "Great Learning",
+      date: "January 2024",
+      credentialId: "GL-NNDL-2024",
+      skills: ["Neural Networks", "Deep Learning", "AI Architecture"],
+      link: "#"
+    },
+    {
+      title: "Real Life Machine Learning and Data Science Projects",
+      issuer: "Udemy",
+      date: "November 2022",
+      credentialId: "UC-e1c70903-b810-4b6b-8749-eebd334575",
+      skills: ["Machine Learning", "Data Science", "Practical Implementation"],
+      link: "#"
+    }
   ];
 
   // Freelance section
@@ -280,7 +323,7 @@ const Resume = () => {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUpVariant}
           custom={7}
-          className="mt-20"
+          className="mb-20"
         >
           <h3 className="text-xl font-bold mb-8 text-center">Technology Stack</h3>
           
@@ -294,6 +337,65 @@ const Resume = () => {
               >
                 {tech.icon}
                 <h4 className="font-medium">{tech.name}</h4>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Certifications Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInUpVariant}
+          custom={8}
+          className="mt-20"
+        >
+          <div className="flex items-center justify-center mb-8">
+            <Award size={24} className="text-purple mr-3" />
+            <h3 className="text-xl font-bold">Certifications</h3>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {certifications.map((cert, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ y: -5 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="glass rounded-xl p-6 hover:bg-secondary/20 transition-all duration-300 border border-purple/20"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <h4 className="font-bold text-lg mb-2 text-foreground">{cert.title}</h4>
+                    <p className="text-muted-foreground text-sm mb-1">
+                      {cert.issuer} • {cert.date}
+                    </p>
+                  </div>
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ml-4 p-2 rounded-lg glass hover:bg-purple/20 transition-colors"
+                    aria-label="View certificate"
+                  >
+                    <ExternalLink size={16} className="text-purple" />
+                  </a>
+                </div>
+                
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {cert.skills.map((skill, skillIndex) => (
+                    <span
+                      key={skillIndex}
+                      className="text-xs px-2 py-1 rounded-full bg-purple/20 text-foreground/80"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+                
+                <p className="text-xs text-muted-foreground">
+                  Credential ID: {cert.credentialId}
+                </p>
               </motion.div>
             ))}
           </div>
