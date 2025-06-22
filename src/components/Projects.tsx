@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, ExternalLink, ChevronLeft, ChevronRight, Play, Pause, BarChartHorizontal, Brain, CreditCard, Braces, Bitcoin, Aperture, } from "lucide-react";
+import { Github, ExternalLink, ChevronLeft, ChevronRight, Play, Pause, BarChartHorizontal, Brain, CreditCard, Braces, Bitcoin, Aperture, User, } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 interface Project {
@@ -94,7 +94,7 @@ const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
     tags: ["React.js", "Firebase", "TypeScript"],
     github: "https://github.com/oxBinaryBrain/Portfoilo_v3",
-    icon: <Braces />,
+    icon: <User />,
   },
 ];
 
