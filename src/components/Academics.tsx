@@ -103,7 +103,7 @@ const Academics = () => {
               <div className="mb-4">
                 <p className={`font-medium ${isDarkTheme ? 'text-white' : 'text-gray-800 dark:text-white'}`}>Presidency University, Bengaluru</p>
                 <p className={`text-sm ${isDarkTheme ? 'text-gray-200' : 'text-gray-700 dark:text-gray-200'}`}>Computer Science and Technology (AI & ML)</p>
-                <p className="text-sm text-purple mt-1">CGPA: In Progress</p>
+                <p className="text-sm text-purple mt-1">CGPA: 7.8</p>
               </div>
               
               <div className="space-y-3">
