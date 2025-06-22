@@ -86,16 +86,6 @@ const projects: Project[] = [
     github: "https://github.com/oxBinaryBrain/Leave_Management",
     icon: <Aperture />,
   },
-  {
-    id: 8,
-    title: "Smart Home Dashboard",
-    subtitle: "Arduino & IoT",
-    description: "A dashboard for monitoring and controlling smart home devices.",
-    image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=800&q=80",
-    tags: ["C", "Arduino", "IoT"],
-    github: "https://github.com/oxBinaryBrain/Ardiuno",
-    icon: <Braces />,
-  },
 ];
 
 const Projects = () => {
