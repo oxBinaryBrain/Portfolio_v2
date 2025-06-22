@@ -85,20 +85,20 @@ const About = () => {
                   Python, JavaScript, C++
                 </p>
               </div>
+
+              <div className="glass rounded-xl p-6 transition-all duration-300 hover:bg-secondary/30 hover:scale-105">
+                <Brain className="text-purple mb-4" size={24} />
+                <h4 className="text-lg font-semibold mb-2">AI & ML</h4>
+                <p className="text-sm text-muted-foreground">
+                  Working with artificial intelligence and machine learning
+                </p>
+              </div>
               
               <div className="glass rounded-xl p-6 transition-all duration-300 hover:bg-secondary/30 hover:scale-105">
                 <Cpu className="text-purple mb-4" size={24} />
                 <h4 className="text-lg font-semibold mb-2">Blockchain</h4>
                 <p className="text-sm text-muted-foreground">
                   Exploring blockchain technologies and applications
-                </p>
-              </div>
-              
-              <div className="glass rounded-xl p-6 transition-all duration-300 hover:bg-secondary/30 hover:scale-105">
-                <Brain className="text-purple mb-4" size={24} />
-                <h4 className="text-lg font-semibold mb-2">AI & ML</h4>
-                <p className="text-sm text-muted-foreground">
-                  Working with artificial intelligence and machine learning
                 </p>
               </div>
             </div>
