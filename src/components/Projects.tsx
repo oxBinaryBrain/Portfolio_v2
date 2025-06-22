@@ -91,7 +91,7 @@ const projects: Project[] = [
     title: "Portfolio Website",
     subtitle: "React & Tailwind",
     description: "A dashboard for monitoring and controlling smart home devices.",
-    image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
     tags: ["React.js", "Firebase", "TypeScript"],
     github: "https://github.com/oxBinaryBrain/Portfoilo_v3",
     icon: <Braces />,
