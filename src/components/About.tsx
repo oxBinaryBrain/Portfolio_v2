@@ -48,7 +48,7 @@ const About = () => {
               <div 
                 className="absolute inset-0" 
                 style={{
-                  backgroundImage: "url('/Gemini_Generated_Image_il9h6pil9h6pil9h.jpg')",
+                  backgroundImage: "url('/Me.jpg')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   opacity: 0.9
