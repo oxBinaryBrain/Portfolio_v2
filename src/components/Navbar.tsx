@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -42,6 +41,27 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Enhanced smooth scroll function
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    
+    const targetId = href.substring(1);
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      const navbarHeight = 80; // Account for fixed navbar
+      const targetPosition = targetElement.offsetTop - navbarHeight;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+      
+      // Close mobile menu if open
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -57,6 +77,7 @@ const Navbar = () => {
           className="text-2xl font-bold tracking-tight"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          onClick={(e) => handleSmoothScroll(e, "#home")}
         >
           UG<span className="text-purple">.</span>
         </motion.a>
@@ -74,6 +95,7 @@ const Navbar = () => {
               }`}
               whileHover={{ y: -2 }}
               whileTap={{ y: 0 }}
+              onClick={(e) => handleSmoothScroll(e, link.href)}
             >
               {link.name}
             </motion.a>
@@ -117,7 +139,7 @@ const Navbar = () => {
                     ? "text-purple bg-secondary/50"
                     : "text-foreground/80 hover:text-foreground hover:bg-secondary/30"
                 }`}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleSmoothScroll(e, link.href)}
               >
                 {link.name}
               </a>
