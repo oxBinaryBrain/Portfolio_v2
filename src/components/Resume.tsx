@@ -46,12 +46,12 @@ const Resume = () => {
 
   // Tech Stack
   const techStack = [
-    { name: "C++", icon: <Code size={32} className="text-purple mb-4" /> },
+    { name: "React.js", icon: <Globe size={32} className="text-purple mb-4" /> },
     { name: "JavaScript", icon: <Cpu size={32} className="text-purple mb-4" /> },
     { name: "TypeScript", icon: <Terminal size={32} className="text-purple mb-4" /> },
     { name: "Python", icon: <Code size={32} className="text-purple mb-4" /> },
     { name: "Node.js", icon: <Server size={32} className="text-purple mb-4" /> },
-    { name: "React.js", icon: <Globe size={32} className="text-purple mb-4" /> },
+    { name: "C++", icon: <Code size={32} className="text-purple mb-4" /> },
     { name: "MongoDB", icon: <Database size={32} className="text-purple mb-4" /> },
     { name: "MySQL", icon: <Database size={32} className="text-purple mb-4" /> },
     { name: "Next.js", icon: <Layers size={32} className="text-purple mb-4" /> },
